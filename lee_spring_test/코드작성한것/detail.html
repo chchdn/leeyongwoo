@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>예약 상세 조회</title>
+</head>
+<body>
+    <div class="title-div">
+        <h3>예약 상세 정보</h3>
+    </div>
+
+    <div>
+        <label>예약번호:</label>
+        <span th:text="${reservation.id}"></span>
+    </div>
+    <div>
+        <label>예약일:</label>
+        <span th:text="${reservation.date}"></span>
+    </div>
+    <div>
+        <label>객실번호:</label>
+        <span th:text="${reservation.roomNumber}"></span>
+    </div>
+    <div>
+        <label>예약자:</label>
+        <span th:text="${reservation.guestName}"></span>
+    </div>
+    <div>
+        <label>예약자 연락처:</label>
+        <span th:text="${reservation.guestPhone}"></span>
+    </div>
+
+    <a href="/reservations">목록으로 돌아가기</a>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<style>
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+    }
+    label {
+        display: inline-block;
+        width: 100px;
+    }
+    button {
+        margin-top: 20px;
+        width: 100px;
+    }
+    .title-div {
+      margin-bottom: 30px;
+    }
+</style>
+</head>
+
+<body>
+<div class="title-div">
+    <h3>Reservation Register Page</h3>
+</div>
+
+<!-- 타임리프를 사용하여 폼의 액션과 데이터를 처리 -->
+<form th:action="@{/reservation/register}" th:object="${reservation}" method="post">
+    <div>
+        <label for="checkInDate">예약일</label>
+        <input type="text" id="checkInDate" th:field="*{date}" placeholder="2024-09-10"/>
+    </div>
+    <div>
+        <label for="roomNo">객실번호</label>
+        <input type="text" id="roomNo" th:field="*{roomNumber}" />
+    </div>
+    <div>
+        <label for="guestName">예약자</label>
+        <input type="text" id="guestName" th:field="*{name}" />
+    </div>
+    <div>
+        <label for="guestPhone">예약자 연락처</label>
+        <input type="text" id="guestPhone" th:field="*{phone}" placeholder="010-1234-5678"/>
+    </div>
+    <button type="submit">전송</button>
+</form>
+</body>
+
+</html>
